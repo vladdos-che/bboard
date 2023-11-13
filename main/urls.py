@@ -3,11 +3,12 @@ from django.urls import path
 from .views import (index, other_page, BbLoginView, profile, BbLogoutView,
                     ChangeUserInfoView, BbPasswordChangeView,
                     RegisterDoneView, RegisterUserView, user_activate,
-                    DeleteUserView)
+                    DeleteUserView, by_rubric)
 
 app_name = 'main'
 
 urlpatterns = [
+    path('<int:pk>/', by_rubric, name='by_rubric'),
     path('<str:page>', other_page, name='other'),
     path('', index, name='index'),
 
