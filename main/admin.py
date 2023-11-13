@@ -78,6 +78,9 @@ class BbAdmin(admin.ModelAdmin):
     inlines = (AdditionalImageInline,)
 
 
+# TODO: Вывод комментариев
+
+
 admin.site.register(AdvUser, AdvUserAdmin)
 admin.site.register(SuperRubric, SuperRubricAdmin)
 admin.site.register(SubRubric, SubRubricAdmin)
