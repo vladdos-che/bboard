@@ -1,0 +1,19 @@
+{% extends "layout/basic.html" %}
+{% load bootstrap4 %}
+
+{% block title %}Объявление {{ bb.title }}!{% endblock %}
+
+{% block content %}
+    <h2>Название обьявления {{ bb.title }}</h2>
+
+    <p>Описание: {{ bb.content }}</p>
+    <p>Цена: {{ bb.price }}</p>
+    <p>Контакты: {{ bb.contacts }}</p>
+    <p>Когда выложено: {{ bb.created_at }}</p>
+    <p>Рубрика: {{ bb.rubric }}</p>
+
+    <div>
+        <a href="{% url 'main:profile_bb_change' pk=bb.pk %}"><button>Изменить</button></a>
+        <a href="{% url 'main:profile_bb_delete' pk=bb.pk %}"><button>Удалить</button></a>
+    </div>
+{% endblock %}

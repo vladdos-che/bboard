@@ -1,0 +1,20 @@
+{% extends "layout/basic.html" %}
+
+{% block content %}
+    <h2>Последние 10 объявлений</h2>
+
+    <div class="media-body">
+        {% for bb in bbs %}
+            <div class="bb_obj">
+                <a href="{% url 'main:detail' rubric_pk=bb.rubric_id pk=bb.pk %}">
+                    <h3>{{ bb.title }}</h3>
+                </a>
+
+                <p class="text-right mt-2">
+                    <a href="{% url 'main:profile_bb_change' pk=bb.pk %}">Исправить</a>
+                    <a href="{% url 'main:profile_bb_delete' pk=bb.pk %}">Удалить</a>
+                </p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
